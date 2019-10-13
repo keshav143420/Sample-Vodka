@@ -1,33 +1,10 @@
 import React from 'react';
-import './Landing.css';
-import CardList from './CardList';
-import Form from './Form';
+import MainContainer from './MainContainer';
 
-class Landing extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      profiles: []
-    }
-  }
-
-  addNewProfile = (profileData) => {
-    this.setState(prevState => ({
-      profiles: [...prevState.profiles, profileData],
-    }));
-    console.log(this.state.profiles);
-  }
-  render() {
-    return (
-      <div>
-        <div className="header">
-          {this.props.title}
-        </div>
-        <Form onSubmit={this.addNewProfile} />
-        <CardList profiles={this.state.profiles} />
-      </div>
-    );
-  }
-}
+const Landing = () => (
+  <div className="App">
+    <MainContainer title="The Github Cards App" />
+  </div>
+);
 
 export default Landing;
