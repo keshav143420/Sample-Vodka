@@ -4,10 +4,12 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
+import {isMobile} from 'react-device-detect';
 import * as ROUTES from './constants/routes';
 import Navigation from './components/Navigation';
 import LandingPage from './components/LandingPage';
 import Login from './components/Login';
+import MobileVIew from './components/MobileVIew';
 
 function App() {
   return (
@@ -16,7 +18,10 @@ function App() {
         <Navigation />
         <hr />
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
-        <Route exact path={ROUTES.LOGIN} component={Login} />
+        
+        {
+          isMobile ? <MobileVIew /> : <Route exact path={ROUTES.LOGIN} component={Login} />
+        }
       </div>
     </Router>
   );

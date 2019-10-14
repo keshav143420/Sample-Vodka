@@ -9,7 +9,7 @@ class Repo extends React.Component {
       <div className="github-profile">
         <div className="info">
           <div className="name">{repo.name}</div>
-          <div className="company">{`${repo.description.slice(0,15)}...`}</div>
+          <div className="company">{ repo.description ? `${repo.description.slice(0,15)}...` : 'No Description'}</div>
         </div>
       </div>
     );
