@@ -6,9 +6,9 @@ import * as ROUTES from '../constants/routes';
 const Navigation = () => (
   <div>
     <ul>
-      <li>
+      {/* <li>
         <Link to={ROUTES.LANDING}>Landing</Link>
-      </li>
+      </li> */}
       <li>
         <Link to={ROUTES.LOGIN}>Login</Link>
       </li>
